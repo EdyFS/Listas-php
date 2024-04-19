@@ -8,10 +8,11 @@
 <body>
     <form action="exer1.php" method="post">
         <?php
-        for ($i=0;$i<7;$i++){
-            echo '<input type="number" name="valores[]">';
+        
+        for ($i=0;$i<10;$i++){
+            echo '<input type="name" name="Nomes[]" placeholder="Nome do aluno">';
+            echo '<input type="number" name="Nota[]" placeholder="Nota do aluno">';
         }
-
         ?>
         <button type="submit">Ok</button>
     </form>
