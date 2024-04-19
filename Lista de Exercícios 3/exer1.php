@@ -7,7 +7,7 @@ for ($i=0; $i< 10; $i++){
     $soma_nota = $soma_nota + $nota;
 }
 
-$media = $soma_nota / count($nome);
+$media = $soma_nota / count($nome[]);
 echo $media;
 
 for ($i = 0; $i < 10; $i++){
@@ -16,5 +16,6 @@ for ($i = 0; $i < 10; $i++){
         $maior = $nota;
     }
 } 
+
 
 ?>
