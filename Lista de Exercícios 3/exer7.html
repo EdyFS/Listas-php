@@ -8,12 +8,12 @@
 <body>
     <form action="exer7.php" method="post">
         <?php
-        for ($i=0;$i<7;$i++){
-            echo '<input type="number" name="valores[]">';
-        }
-
+        for ($i = 1; $i <= 10; $i++) {
+            echo '<input type="text" name="alunos['.$i.'][nome]">';
+            echo '<input type="number" name="alunos['.$i.'][n1]">';
+            echo '<input type="number" name="alunos['.$i.'][n2]">';
         ?>
-        <button type="submit">Ok</button>
+        <button type="submit">Enviar</button>
     </form>
 </body>
 </html>
