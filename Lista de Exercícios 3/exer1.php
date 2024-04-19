@@ -1,9 +1,20 @@
 <?php
 
-if (isset($_POST)){
-    if (isset($_POST['valores'])){
-        $vetor = $_POST['valores'];
-        var_dump($vetor);
-    }
+$nome = isset($_POST['nome']);
+$nota = isset($_P['nota']);
+
+for ($i=0; $i< 10; $i++){
+    $soma_nota = $soma_nota + $nota;
 }
+
+$media = $soma_nota / count($nome);
+echo $media;
+
+for ($i = 0; $i < 10; $i++){
+    $maior = $nota;
+    if ($nota > $maior){
+        $maior = $nota;
+    }
+} 
+
 ?>
