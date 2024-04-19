@@ -1,9 +1,12 @@
 <?php
 
-if (isset($_POST)){
-    if (isset($_POST['valores'])){
-        $vetor = $_POST['valores'];
-        var_dump($vetor);
+
+    $numero = $_POST["numero"];
+    $valores = $_POST["valor"];
+    
+    foreach($valores as $n) {
+        $multiplicacao = $n * $numero;
+        echo "O resultado da multiplicação entre ", $n,"e ", $numero, "é ", $multiplicacao;
     }
-}
+
 ?>
