@@ -6,6 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form action="exer5.php" method="post">
+        <?php
+        for ($i=0;$i<7;$i++){
+            echo '<input type="number" name="valores[]">';
+        }
+
+        ?>
+        <button type="submit">Ok</button>
+    </form>
 </body>
 </html>
