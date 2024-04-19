@@ -1,9 +1,21 @@
 <?php
+$numero = $_POST['numero'];
+$meses = [
+    1 => "Janeiro",
+    2 => "Fevereiro",
+    3 => "Março",
+    4 => "Abril",
+    5 => "Maio",
+    6 => "Junho",
+    7 => "Julho",
+    8 => "Agosto",
+    9 => "Setembro",
+    10 => "Outubro",
+    11 => "Novembro",
+    12 => "Dezembro"
+];
 
-if (isset($_POST)){
-    if (isset($_POST['valores'])){
-        $vetor = $_POST['valores'];
-        var_dump($vetor);
-    }
-}
+$mes = $numero - 1;
+echo $meses[$mes];
+
 ?>
