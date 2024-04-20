@@ -15,7 +15,7 @@ $meses = [
     12 => "Dezembro"
 ];
 
-$mes = $numero - 1;
+$mes = $numero;
 echo $meses[$mes];
 
 ?>
