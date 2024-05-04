@@ -3,4 +3,4 @@
 $medida = $_POST['medida'];
 
 $cm = $medida * 100;
-echo $cm;
+echo "O valor ", $medida, "m é equivalente à ", $cm, "cm";
