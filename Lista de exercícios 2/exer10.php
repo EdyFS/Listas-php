@@ -1,6 +1,6 @@
 <?php
 
-$masssa = $_POST['massa'];
+$massa = $_POST['massa'];
 $altura = $_POST['altura'];
 
 $imc = $massa / ($altura * $altura);
