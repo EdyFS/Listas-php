@@ -4,6 +4,5 @@ $numero = $_POST['numero'];
 
 for ($i = 0; $i <= 10; $i++){
     $resultado = $numero * $i;
-    echo $resultado;
-    
+    echo  $numero, "x", $i,  "=", $resultado;
 }
