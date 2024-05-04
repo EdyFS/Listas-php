@@ -7,3 +7,7 @@ if ($n1 == $n2){
     $valor = 3 * ($n1 + $n2);
     echo $valor;
 }
+else{
+    $soma = $n1 + $n2;
+    echo $soma;
+}
