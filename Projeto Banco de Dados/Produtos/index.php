@@ -5,7 +5,7 @@ require_once("../cabecalho.html");
 ?>
 <h1>Gerenciamento de Produtos</h1>
 
-<a href="" class="btn btn-primary mt-3">Adicionar Produto</a>
+<a href="inserir_produto.php" class="btn btn-primary mt-3">Adicionar Produto</a>
 
 <table class="mt-3 table table-hover table-striped">
     <thead>
