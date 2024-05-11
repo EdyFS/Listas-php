@@ -33,7 +33,8 @@ require_once("../cabecalho.html");
     </div>
     <div class="row">
         <div class="col">
-        <button type="submit" class="btn btn-success mt-3">Salvar</button>
+            <p class="mt-3">Deseja realmente excluir?</p>
+        <button type="submit" class="btn btn-danger mt-3">Excluir</button>
         </div>
     </div>
 </form>
