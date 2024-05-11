@@ -1,7 +1,7 @@
 <?php
 require_once("../cabecalho.html");
 ?>
-<h3>Inserir Produto</h3>
+<h3>Alterar Produto</h3>
 <form>
     <div class="row">
         <div class="col">
