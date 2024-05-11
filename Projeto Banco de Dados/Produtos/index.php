@@ -22,18 +22,30 @@ require_once("../cabecalho.html");
             <td>Livro de Jane Austen</td>
             <td>R$10,00</td>
             <td>Livros</td>
+            <td>
+                <a href="alterar_produto.php" class="btn btn-warning">Alterar</a>
+                <a href="excluir_produto.php" class="btn btn-danger">Excluir</a>
+            </td>
         </tr>
         <tr>
             <td>Espagueti Liane</td>
             <td>Macarrão de Semolina</td>
             <td>R$3,00</td>
             <td>Perecíveis</td>
+            <td>
+                <a href="alterar_produto.php" class="btn btn-warning">Alterar</a>
+                <a href="excluir_produto.php" class="btn btn-danger">Excluir</a>
+            </td>
         </tr>
         <tr>
             <td>óculos de Natação</td>
             <td>Infantil</td>
             <td>R$25,00</td>
             <td>Material Esportivo</td>
+            <td>
+                <a href="alterar_produto.php" class="btn btn-warning">Alterar</a>
+                <a href="excluir_produto.php" class="btn btn-danger">Excluir</a>
+            </td>
         </tr>
     </tbody>
 </table>
