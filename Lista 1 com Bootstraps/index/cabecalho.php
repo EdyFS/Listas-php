@@ -11,5 +11,4 @@
     require_once "nav.html";
     require_once "funcoes.php";
     ?>
-</body>
-</html>
+<main class="container">
