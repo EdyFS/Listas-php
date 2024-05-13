@@ -5,8 +5,8 @@ require_once "cabecalho.php";
 <form action="exer7resp.php" method="post">
     <div class="row">
         <div class="col">
-            <label for="valor1" class="form-label">Informe a medida em metros</label>
-            <input type="number" name="valor1" id="valor1" class="form-control">
+            <label for="medida" class="form-label">Informe a medida em metros</label>
+            <input type="number" name="medida" id="medida" class="form-control">
         </div>
     </div>
     
