@@ -1,6 +1,6 @@
 <?php
 
-require_once("../cabecalho.html");
+require_once("../cabecalho.php");
 
 ?>
 <h1>Gerenciamento de Produtos</h1>
