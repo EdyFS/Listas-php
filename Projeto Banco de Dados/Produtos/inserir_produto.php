@@ -41,4 +41,15 @@ require_once("../cabecalho.html");
     </div>
 </form>
 <?php
+if ($_POST){
+    $nome = $_POST['nome'];
+    $descricao = $_POST['descricao'];
+    $valor = $_POST['valor'];
+    $categoria = $_POST['categoria'];
+    if ($nome != "" && $descricao != "" && $valor != "" && $categoria != ""){
+        #inserirProduto();
+    } else {
+        echo "Preencha todos os campos!"
+    }
+}
 require_once("../rodape.html");
