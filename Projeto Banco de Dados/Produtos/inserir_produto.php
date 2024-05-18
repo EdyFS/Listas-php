@@ -47,7 +47,10 @@ if ($_POST){
     $valor = $_POST['valor'];
     $categoria = $_POST['categoria'];
     if ($nome != "" && $descricao != "" && $valor != "" && $categoria != ""){
-        #inserirProduto();
+        if(inserirProduto($nome, $descricao,$valor,$categoria))
+        echo "Registro inserido com sucesso!";
+    else
+    echo "Erro ao inserir o registro!"
     } else {
         echo "Preencha todos os campos!"
     }
