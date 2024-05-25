@@ -1,8 +1,8 @@
 <?php
-require_once("../cabecalho.html");
+require_once("../cabecalho.php");
 ?>
 <h3>Inserir Produto</h3>
-<form>
+<form action="" method="POST">
     <div class="row">
         <div class="col">
             <label for="nome" class="form-label">Informe o nome</label>
