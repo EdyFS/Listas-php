@@ -17,6 +17,10 @@ require_once("../cabecalho.php");
         </tr>
     </thead>
     <tbody>
+    <?php
+                $linhas = retornarProdutos();
+                while ($l = $linhas->fetch(PDO::FETCH_ASSOC)){
+            ?>
         <tr>
             <td>Persuasão</td>
             <td>Livro de Jane Austen</td>
