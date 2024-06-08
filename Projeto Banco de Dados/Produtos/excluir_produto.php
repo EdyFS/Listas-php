@@ -18,7 +18,8 @@ if ($_POST){
 $dados = consultarProdutoId($id);
 ?>
 <h3>Excluir Produto</h3>
-<form action="" method="POST">
+<form action="excluir_produto.php" method="POST">
+    <input type="hidden" name="id" value="<?= $id ?>">
     <div class="row">
         <div class="col">
             <label for="nome" class="form-label">Informe o nome</label>
@@ -55,7 +56,7 @@ $dados = consultarProdutoId($id);
     </div>
     <div class="row">
         <div class="col">
-        <button type="submit" class="btn btn-success mt-3">Excluir</button>
+        <input type="submit" class="btn btn-success mt-3" value="Excluir">
         </div>
     </div>
 </form>
