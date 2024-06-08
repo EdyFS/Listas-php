@@ -16,16 +16,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-              <a class="nav-link" href="LIsta-php/Lista-php/Produtos/index.php">Hóspede</a>
+              <a class="nav-link" href="Hospede/index.php">Hóspede</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="LIsta-php/Lista-php/Produtos/index.php">Quartos</a>
+              <a class="nav-link" href="Quarto/index.php">Quartos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="LIsta-php/Lista-php/Produtos/index.php">Reservas</a>
+              <a class="nav-link" href="Reserva/index.php">Reservas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="LIsta-php/Lista-php/Produtos/index.php">Serviços</a>
+              <a class="nav-link" href="Servico/index.php">Serviços</a>
             </li>
           </ul>
         </div>
