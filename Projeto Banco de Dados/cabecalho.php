@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="LIsta-php/Lista-php/Produtos/index.php">Produtos</a>
+              <a class="nav-link" href="Produtos/index.php">Produtos</a>
             </li>
           </ul>
         </div>
