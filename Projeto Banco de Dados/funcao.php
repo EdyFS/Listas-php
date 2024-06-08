@@ -42,3 +42,19 @@ function inserirProduto($nome, $descricao, $valor, $categoria){
             return 0;
         }
 }
+
+function consultarProdutoId($id){
+    try{
+        $sql = "SELECT * FROM produto WHERE id = :id";
+        $conexao = conectarBanco();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+    catch (Exception $e){
+
+    }
+    
+
+}
