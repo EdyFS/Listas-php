@@ -13,7 +13,7 @@ if ($_POST){
     $categoria = $_POST['categoria'];
     if ($nome != "" && $descricao != "" && $valor != "" && $categoria != ""){
         session_start();
-        if (inserirProduto($nome,$descricao,$valor,$categoria, $_SESSION ['id'] ))
+        if (alterarProduto($nome,$descricao,$valor,$categoria, $_SESSION ['id'] ))
             echo "Registro alterado com sucesso!";
         else
             echo "Erro ao alterar o registro!";
