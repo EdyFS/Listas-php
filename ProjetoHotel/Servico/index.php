@@ -1,0 +1,6 @@
+<?php
+require_once("../cabecalho.php");
+?>
+<h1>Serviços</h1>
+<?php
+require_once("../rodape.html");
