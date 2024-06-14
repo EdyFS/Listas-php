@@ -1,23 +1,49 @@
-function inserirHospede
+<?php
 
-function alterarHospede
+function inserirHospede(){
 
-function excluirHospede
+}
 
-function inserirReserva
+function alterarHospede(){
 
-function alterarReserva
+}
 
-function excluirReserva
+function excluirHospede(){
 
-function inserirQuarto
+}
 
-function alterarQuarto
+function inserirReserva(){
 
-function excluirQuarto
+}
 
-function inserirServico
+function alterarReserva(){
 
-function alterarServico
+}
 
-function excluirServico
+function excluirReserva(){
+
+}
+
+function inserirQuarto(){
+
+}
+
+function alterarQuarto(){
+
+}
+
+function excluirQuarto(){
+
+}
+
+function inserirServico(){
+
+}
+
+function alterarServico(){
+
+}
+
+function excluirServico(){
+    
+}
