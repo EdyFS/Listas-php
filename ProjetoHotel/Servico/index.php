@@ -10,7 +10,7 @@ require_once("../cabecalho.php");
             <th>Id</th>
             <th>Nome do Serviço</th>
             <th>Custo</th>
-            <th>Data de Checkin</th>
+            <th>Número da Reserva</th>
         </tr>
     </thead>
     <tbody>
