@@ -2,7 +2,7 @@
 require_once("../cabecalho.php");
 ?>
 <h1>Hóspede</h1>
-<a href="inserir_hospede.php" class="btn btn-primary mt-3">Adicionar Produto</a>
+<a href="inserir_hospede.php" class="btn btn-primary mt-3">Inserir Hóspede</a>
 
 <table class="mt-3 table table-hover table-striped">
     <thead>
