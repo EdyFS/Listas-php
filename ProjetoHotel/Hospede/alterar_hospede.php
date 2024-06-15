@@ -1,26 +1,27 @@
 <?php
 require_once("../cabecalho.php");
+session_start();
 if (isset($_GET['id'])){
-    $id = $GET['id'];
-    session_start();
+    $id = $_GET['id'];
     $_SESSION['id'] = $id;
-    } else
+    } else{
     $id = $_SESSION['id'];
+    }
     if ($_POST){
         $nome = $_POST['nome'];
         $fone = $_POST['fone'];
         $checkin = $_POST['checkin'];
         if ($nome != "" && $fone != "" && $checkin != ""){
             session_start();
-            if (alterarHospede($nome,$fone,$checkin, $_SESSION['id']))
-                echo "Registro alterado com sucesso!";
-            else
-                echo "Erro ao alterar o registro!";
+            if (alterarHospede($nome,$fone,$checkin, $_SESSION['id'])){
+                echo "Registro alterado com sucesso!";}
+            else{
+                echo "Erro ao alterar o registro!";}
         } else {
             echo "Preencha todos os campos!";
         }
     }
-$dados = consultarHospedeId($id);
+    $dados = consultarHospedeId($id);
 ?>
 <h1 class="d-flex justify-content-center">Alterar dados do hóspede</h1>
 <form action="" method="POST">

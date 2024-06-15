@@ -1,8 +1,9 @@
 <?php
 require_once("../cabecalho.php");
+session_start();
 if (isset($_GET['id'])){
     $id = $GET['id'];
-    session_start();
+    
     $_SESSION['id'] = $id;
     } else
     $id = $_SESSION['id'];
