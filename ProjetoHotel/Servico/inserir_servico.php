@@ -30,7 +30,7 @@ require_once("../cabecalho.php");
 
 <?php
 if ($_POST){
-    $servico = $_POST['servico'];
+    $servico = $_POST['nome_servico'];
     $custo = $_POST['custo'];
     $reserva = $_POST['reserva'];
     if ($servico != "" && $custo != "" && $reserva != ""){

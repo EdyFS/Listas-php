@@ -1,7 +1,7 @@
 <?php
 require_once("../cabecalho.php");
 if (isset($_GET['id'])){
-    $id = $GET['id'];
+    $id = $_GET['id'];
     session_start();
     $_SESSION['id'] = $id;
     } else
@@ -18,23 +18,23 @@ if (isset($_GET['id'])){
 $dados = consultarReservaId($id);
 ?>
 <h1 class="d-flex justify-content-center">Excluir reserva</h1>
-<form action="" method="POST">
+<form action="excluir_reserva.php" method="POST">
     <div class="row">
         <div class="col">
         <label for="datareserva" class="form-label">Insira a data da reserva: </label>
-        <input type="date" class="form-control" name="datareserva" value="<?= $dados['datareserva'] ?>" disabled>
+        <input type="date" class="form-control" name="datareserva" value="<?= $datareserva ?>" disabled>
         </div>
     </div>
     <div class="row">
         <div class="col">
         <label for="hospede" class="form-label">Insira o código do hóspede: </label>
-        <input type="text" class="form-control" name="hospede" value="<?= $dados['hospede'] ?>" disabled>
+        <input type="text" class="form-control" name="hospede" value="<?= $hospede ?>" disabled>
         </div>
     </div>
     <div class="row">
         <div class="col">
         <label for="quarto" class="form-label">Insira o número do quarto: </label>
-        <input type="number" class="form-control" name="quarto" value="<?= $dados['quarto'] ?>" disabled>
+        <input type="number" class="form-control" name="quarto" value="<?= $quarto ?>" disabled>
         </div>
     </div>
     <div class="row">

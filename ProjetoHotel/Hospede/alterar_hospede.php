@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
 }
 
 
-$nome = $_GET['nome'];
+$nome = $_GET['nome_hospede'];
 $fone = $_GET['telefone'];
 $checkin = $_GET['data_checkin'];
 if (isset($_GET['id'])){

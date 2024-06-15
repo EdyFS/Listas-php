@@ -1,7 +1,7 @@
 <?php
 require_once("../cabecalho.php");
 if (isset($_GET['id'])){
-    $id = $GET['id'];
+    $id = $_GET['id'];
     session_start();
     $_SESSION['id'] = $id;
     } else
@@ -18,7 +18,7 @@ if (isset($_GET['id'])){
 $dados = consultarQuartoId($id);
 ?>
 <h1 class="d-flex justify-content-center">Excluir quarto</h1>
-<form action="" method="POST">
+<form action="excluir_quarto.php" method="POST">
     <div class="row">
         <div class="col">
         <label for="numero" class="form-label">Insira o número do quarto: </label>

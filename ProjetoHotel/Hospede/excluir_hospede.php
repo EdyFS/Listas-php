@@ -2,7 +2,7 @@
 require_once("../cabecalho.php");
 session_start();
 if (isset($_GET['id'])){
-    $id = $GET['id'];
+    $id = $_GET['id'];
     
     $_SESSION['id'] = $id;
     } else
@@ -19,23 +19,23 @@ if (isset($_GET['id'])){
 $dados = consultarHospedeId($id);
 ?>
 <h1 class="d-flex justify-content-center">Excluir hóspede</h1>
-<form action="" method="POST">
+<form action="excluir_hospede.php" method="POST">
     <div class="row">
         <div class="col">
         <label for="nome" class="form-label">Insira o nome do hóspede: </label>
-        <input type="text" class="form-control" name="nome" value="<?= $dados['nome'] ?>" disabled>
+        <input type="text" class="form-control" name="nome" value="<?= $nome ?>" disabled>
         </div>
     </div>
     <div class="row">
         <div class="col">
         <label for="fone" class="form-label">Insira o telefone do hóspede: </label>
-        <input type="text" class="form-control" name="fone" value="<?= $dados['fone'] ?>" disabled>
+        <input type="text" class="form-control" name="fone" value="<?= $fone ?>" disabled>
         </div>
     </div>
     <div class="row">
         <div class="col">
         <label for="checkin" class="form-label">Insira a data de Check In do hóspede: </label>
-        <input type="date" class="form-control" name="checkin" value="<?= $dados['checkin'] ?>" disabled>
+        <input type="date" class="form-control" name="checkin" value="<?= $checkin ?>" disabled>
         </div>
     </div>
     <div class="row">

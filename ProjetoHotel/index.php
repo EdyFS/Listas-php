@@ -7,7 +7,7 @@ require_once "conexao.php";
 $db = new Conexao();
 $db = $db->conectar();
 ?>
-<h1>Sua melhor experiência no melhor conforto</h1>
+<h1 class="d-flex justify-content-center">Sua experiência no melhor conforto</h1>
 
 
 <?php
