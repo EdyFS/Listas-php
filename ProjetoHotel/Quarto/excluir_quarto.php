@@ -27,14 +27,14 @@ if (isset($_POST['atualizar'])){
     </div>
     <div class="row">
         <div class="col">
-        <label for="tipo" class="form-label">Insira o telefone do hóspede: </label>
+        <label for="tipo" class="form-label">Insira o tipo do quarto: </label>
         <input type="text" class="form-control" name="tipo" value="<?= $dados['tipo'] ?>" disabled>
         </div>
     </div>
     <div class="row">
         <div class="col">
-        <label for="preco" class="form-label">Insira a data de Check In do hóspede: </label>
-        <input type="number" class="form-control" name="preco" value="<?= $dados['preco'] ?>" disabled>
+        <label for="preco" class="form-label">Insira o preço do quarto: </label>
+        <input type="number" class="form-control" name="preco" value="<?= $dados['preco_por_noite'] ?>" disabled>
         </div>
     </div>
     <div class="row">
