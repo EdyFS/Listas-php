@@ -167,7 +167,7 @@ function mostrarReservas(){
     }
 }
 
-function consultarReservId($id){
+function consultarReservaId($id){
     try{
         $sql = "SELECT * FROM Reserva WHERE id = :id";
         $conexao = conectar();

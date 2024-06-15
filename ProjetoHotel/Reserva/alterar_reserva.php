@@ -6,19 +6,19 @@ require_once("../cabecalho.php");
     <div class="row">
         <div class="col">
         <label for="datareserva" class="form-label">Insira a data da reserva: </label>
-        <input type="date" class="form-control" name="datareserva">
+        <input type="date" class="form-control" name="datareserva" value="<?= $dados['datareserva'] ?>">
         </div>
     </div>
     <div class="row">
         <div class="col">
         <label for="hospede" class="form-label">Insira o código do hóspede: </label>
-        <input type="text" class="form-control" name="hospede">
+        <input type="text" class="form-control" name="hospede" value="<?= $dados['hospede'] ?>">
         </div>
     </div>
     <div class="row">
         <div class="col">
         <label for="quarto" class="form-label">Insira o número do quarto: </label>
-        <input type="number" class="form-control" name="quarto">
+        <input type="number" class="form-control" name="quarto" value="<?= $dados['quarto'] ?>">
         </div>
     </div>
     <div class="row">
