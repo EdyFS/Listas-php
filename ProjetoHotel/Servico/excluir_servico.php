@@ -1,19 +1,19 @@
 <?php
 require_once("../cabecalho.php");
+session_start();
 if (isset($_GET['id'])){
     $id = $_GET['id'];
-    session_start();
+
     $_SESSION['id'] = $id;
     } else
-    $id = $_SESSION['id'];
+    
     if ($_POST){
-        if ($servico != "" && $custo != "" && $reserva != ""){
-            session_start();
-            if (excluirServico($_SESSION ['id'] ))
-                header('Location: index.php');
-            else
-                echo "Erro ao excluir o registro!";
-        } 
+        $id = $_SESSION['id'];
+        if (excluirServico($_SESSION ['id'] ))
+            header('Location: index.php');
+        else
+            echo "Erro ao excluir o registro!";
+         
     }
 $dados = consultarServicoId($id);
 ?>

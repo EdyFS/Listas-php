@@ -228,10 +228,10 @@ function inserirServico($servico, $custo, $reserva){
 
 function consultarServicoId($id){
     try{
-        $sql = "SELECT * FROM Servico WHERE id_servico = :servico";
+        $sql = "SELECT * FROM Servico WHERE id_servico = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":servico", $id);
+        $stmt->bindValue(":id", $id);
         $stmt->execute();
         return $stmt->fetch();
     }

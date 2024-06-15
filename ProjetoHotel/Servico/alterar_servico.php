@@ -1,6 +1,6 @@
 <?php
 require_once("../cabecalho.php");
-require_once("../cabecalho.php");
+
 session_start();
 if (isset($_GET['id'])){
     $id = $_GET['id'];
@@ -14,7 +14,7 @@ if (isset($_GET['id'])){
         $reserva = $_POST['reserva'];
         if ($numero != "" && $tipo != "" && $preco != ""){
             session_start();
-            if (alterarQuarto($nome_servico,$custo,$reserva, $_SESSION['id']))
+            if (alterarQuarto($servico,$custo,$reserva, $_SESSION['id']))
                 echo "Registro alterado com sucesso!";
             else
                 echo "Erro ao alterar o registro!";
