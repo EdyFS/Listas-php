@@ -1,51 +1,50 @@
 <?php
 require_once("../cabecalho.php");
 session_start();
-if (isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    session_start();
     $_SESSION['id'] = $id;
-    } else
+} else {
     $id = $_SESSION['id'];
-    if ($_POST){
-        $reserva = $_POST['data_reserva'];
+}
+if (isset($_POST['atualizar'])){
+        $datareserva = $_POST['datareserva'];
         $hospede = $_POST['hospede'];
         $quarto = $_POST['quarto'];
-        if ($reserva != "" && $hospede != "" && $quarto != ""){
-            session_start();
-            if (alterarQuarto($reserva,$hospede,$quarto, $_SESSION['id']))
-                echo "Registro alterado com sucesso!";
-            else
-                echo "Erro ao alterar o registro!";
+        if ($datareserva != "" && $hospede != "" && $quarto != ""){
+            if (alterarReserva($datareserva,$hospede,$quarto, $_SESSION['id'])){
+                echo "Registro alterado com sucesso!";}
+            else{
+                echo "Erro ao alterar o registro!";}
         } else {
             echo "Preencha todos os campos!";
         }
     }
-    $dados = consultarQuartoId($id);
+    $dados = consultarReservaId($id);
 ?>
 <h1 class="d-flex justify-content-center">Alterar dados da reserva</h1>
 <form action="" method="POST">
     <div class="row">
         <div class="col">
         <label for="datareserva" class="form-label">Insira a data da reserva: </label>
-        <input type="date" class="form-control" name="datareserva" value="<?= $datareserva ?>">
+        <input type="date" class="form-control" name="datareserva" value="<?= $dados['data_reserva'] ?>"> 
         </div>
     </div>
     <div class="row">
         <div class="col">
-        <label for="hospede" class="form-label">Insira o código do hóspede: </label>
-        <input type="text" class="form-control" name="hospede" value="<?= $hospede ?>">
+        <label for="hospede" class="form-label">Insira o hóspede: </label>
+        <input type="text" class="form-control" name="hospede" value="<?= $dados['hospede'] ?>">
         </div>
     </div>
     <div class="row">
         <div class="col">
-        <label for="quarto" class="form-label">Insira o número do quarto: </label>
-        <input type="number" class="form-control" name="quarto" value="<?= $quarto ?>">
+        <label for="quarto" class="form-label">Insira o quarto: </label>
+        <input type="number" class="form-control" name="quarto" value="<?= $dados['quarto'] ?>">
         </div>
     </div>
     <div class="row">
         <div class="col">
-        <button type="submit" class="btn btn-success mt-3">Alterar</button>
+        <button type="submit" class="btn btn-success mt-3" value="1" name="atualizar">Alterar</button>
         </div>
     </div>
 </form>

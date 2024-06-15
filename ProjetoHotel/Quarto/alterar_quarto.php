@@ -1,22 +1,21 @@
 <?php
 require_once("../cabecalho.php");
 session_start();
-if (isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    session_start();
     $_SESSION['id'] = $id;
-    } else
+} else {
     $id = $_SESSION['id'];
-    if ($_POST){
-        $numero = $_POST['numero_quarto'];
+}
+if (isset($_POST['atualizar'])){
+        $numero = $_POST['numero'];
         $tipo = $_POST['tipo'];
         $preco = $_POST['preco'];
         if ($numero != "" && $tipo != "" && $preco != ""){
-            session_start();
-            if (alterarQuarto($numero,$tipo,$preco, $_SESSION['id']))
-                echo "Registro alterado com sucesso!";
-            else
-                echo "Erro ao alterar o registro!";
+            if (alterarQuarto($numero,$tipo,$preco, $_SESSION['id'])){
+                echo "Registro alterado com sucesso!";}
+            else{
+                echo "Erro ao alterar o registro!";}
         } else {
             echo "Preencha todos os campos!";
         }
@@ -28,24 +27,24 @@ if (isset($_GET['id'])){
     <div class="row">
         <div class="col">
         <label for="numero" class="form-label">Insira o número do quarto: </label>
-        <input type="number" class="form-control" name="numero" value="<?= $numero ?>">
+        <input type="number" class="form-control" name="numero" value="<?= $dados['numero_quarto'] ?>"> 
         </div>
     </div>
     <div class="row">
         <div class="col">
         <label for="tipo" class="form-label">Insira o tipo do quarto: </label>
-        <input type="text" class="form-control" name="tipo" value="<?= $tipo ?>">
+        <input type="text" class="form-control" name="tipo" value="<?= $dados['tipo'] ?>">
         </div>
     </div>
     <div class="row">
         <div class="col">
-        <label for="preco" class="form-label">Insira o preço do quarto: </label>
-        <input type="number" class="form-control" name="preco" value="<?= $preco ?>">
+        <label for="preco" class="form-label">Insira o preço: </label>
+        <input type="number" class="form-control" name="preco" value="<?= $dados['preco_por_noite'] ?>">
         </div>
     </div>
     <div class="row">
         <div class="col">
-        <button type="submit" class="btn btn-success mt-3">Alterar</button>
+        <button type="submit" class="btn btn-success mt-3" value="1" name="atualizar">Alterar</button>
         </div>
     </div>
 </form>

@@ -11,6 +11,7 @@ require_once("../cabecalho.php");
             <th>Nome</th>
             <th>Telefone</th>
             <th>Data de Checkin</th>
+            <th>Ações<th>
         </tr>
     </thead>
     <tbody>

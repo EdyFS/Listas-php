@@ -11,6 +11,7 @@ require_once("../cabecalho.php");
             <th>Número do Quarto</th>
             <th>Tipo</th>
             <th>Preço por noite</th>
+            <th>Ações<th>
         </tr>
     </thead>
     <tbody>

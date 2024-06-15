@@ -11,6 +11,7 @@ require_once("../cabecalho.php");
             <th>Data da Reserva</th>
             <th>Id do Hóspede</th>
             <th>Id do Quarto</th>
+            <th>Ações<th>
         </tr>
     </thead>
     <tbody>

@@ -1,19 +1,19 @@
 <?php
 require_once("../cabecalho.php");
+session_start();
 if (isset($_GET['id'])){
     $id = $_GET['id'];
-    session_start();
+
     $_SESSION['id'] = $id;
     } else
-    $id = $_SESSION['id'];
+    
     if ($_POST){
-        if ($numero != "" && $tipo != "" && $preco != ""){
-            session_start();
-            if (excluirQuarto($_SESSION ['id'] ))
-                header('Location: index.php');
-            else
-                echo "Erro ao excluir o registro!";
-        } 
+        $id = $_SESSION['id'];
+        if (excluirQuarto($_SESSION ['id'] ))
+            header('Location: index.php');
+        else
+            echo "Erro ao excluir o registro!";
+         
     }
 $dados = consultarQuartoId($id);
 ?>

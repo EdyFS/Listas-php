@@ -11,6 +11,7 @@ require_once("../cabecalho.php");
             <th>Nome do Serviço</th>
             <th>Custo</th>
             <th>Número da Reserva</th>
+            <th>Ações<th>
         </tr>
     </thead>
     <tbody>

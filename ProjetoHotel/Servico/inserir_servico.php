@@ -12,7 +12,7 @@ require_once("../cabecalho.php");
     <div class="row">
         <div class="col">
         <label for="custo" class="form-label">Insira o custo do serviço: </label>
-        <input type="text" class="form-control" name="custo">
+        <input type="number" class="form-control" name="custo">
         </div>
     </div>
     <div class="row">
