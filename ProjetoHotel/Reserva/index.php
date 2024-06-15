@@ -21,12 +21,12 @@ require_once("../cabecalho.php");
             <tr>
                 <td><?= $l['id_reserva'] ?></td>
                 <td><?= $l['data_reserva'] ?></td>
-                <td><?= $l['id_hospede'] ?></td>
-                <td><?= $l['id_quarto'] ?></td>
+                <td><?= $l['hospede'] ?></td>
+                <td><?= $l['quarto'] ?></td>
                 <td>
         
-                <a href="alterar_reserva.php" class="btn btn-warning">Alterar</a>
-                <a href="excluir_reserva.php" class="btn btn-danger">Excluir</a>
+                <a href="alterar_reserva.php?id=<?$l['id_reserva'] ?>&datareserva<?= $l['data_reserva'] ?>&hospede<?= $l['hospede'] ?>&quarto<?= $l['quarto'] ?>" class="btn btn-warning">Alterar</a>
+                <a href="excluir_reserva.php?id=<?$l['id_reserva'] ?>&datareserva<?= $l['data_reserva'] ?>&hospede<?= $l['hospede'] ?>&quarto<?= $l['quarto'] ?>" class="btn btn-danger">Excluir</a>
             </td>
         </tr>
         <?php

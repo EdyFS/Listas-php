@@ -25,8 +25,8 @@ require_once("../cabecalho.php");
                 <td><?= $l['data_checkin'] ?></td>
                 <td>
         
-                <a href="alterar_hospede.php" class="btn btn-warning">Alterar</a>
-                <a href="excluir_hospede.php" class="btn btn-danger">Excluir</a>
+                <a href="alterar_hospede.php?id=<?= $l['id_hospede'] ?>&nome=<?= $l['nome_hospede'] ?>&fone=<?= $l['telefone'] ?>&checkin=<?= $l['data_checkin'] ?>" class="btn btn-warning">Alterar</a>
+                <a href="excluir_hospede.php?id=<?= $l['id_hospede'] ?>&nome=<?= $l['nome_hospede'] ?>&fone=<?= $l['telefone'] ?>&checkin=<?= $l['data_checkin'] ?>" class="btn btn-danger">Excluir</a>
             </td>
         </tr>
         <?php

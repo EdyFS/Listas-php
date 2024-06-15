@@ -1,18 +1,28 @@
 <?php
 require_once("../cabecalho.php");
-session_start();
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    session_start();
+    $_SESSION['id'] = $id;
+} else {
+    session_start();
+    $id = $_SESSION['id'];
+}
+
+
+$nome = $_GET['nome'];
+$fone = $_GET['telefone'];
+$checkin = $_GET['data_checkin'];
 if (isset($_GET['id'])){
     $id = $_GET['id'];
     $_SESSION['id'] = $id;
     } else{
     $id = $_SESSION['id'];
     }
-    if ($_POST){
-        $nome = $_POST['nome'];
-        $fone = $_POST['fone'];
-        $checkin = $_POST['checkin'];
+    if (isset($_POST['atualizar'])){
+        
         if ($nome != "" && $fone != "" && $checkin != ""){
-            session_start();
             if (alterarHospede($nome,$fone,$checkin, $_SESSION['id'])){
                 echo "Registro alterado com sucesso!";}
             else{
@@ -28,24 +38,24 @@ if (isset($_GET['id'])){
     <div class="row">
         <div class="col">
         <label for="nome" class="form-label">Insira o nome do hóspede: </label>
-        <input type="text" class="form-control" name="nome" value="<?= $dados['nome'] ?>"> 
+        <input type="text" class="form-control" name="nome" value="<?= $nome ?>"> 
         </div>
     </div>
     <div class="row">
         <div class="col">
         <label for="fone" class="form-label">Insira o telefone do hóspede: </label>
-        <input type="text" class="form-control" name="fone" value="<?= $dados['fone'] ?>">
+        <input type="text" class="form-control" name="fone" value="<?= $fone ?>">
         </div>
     </div>
     <div class="row">
         <div class="col">
         <label for="checkin" class="form-label">Insira a data de Check In do hóspede: </label>
-        <input type="date" class="form-control" name="checkin" value="<?= $dados['checkin'] ?>">
+        <input type="date" class="form-control" name="checkin" value="<?= $checkin ?>">
         </div>
     </div>
     <div class="row">
         <div class="col">
-        <button type="submit" class="btn btn-success mt-3">Alterar</button>
+        <button type="submit" class="btn btn-success mt-3" value="1" name="atualizar">Alterar</button>
         </div>
     </div>
 </form>

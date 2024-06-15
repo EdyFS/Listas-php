@@ -33,7 +33,7 @@ function mostrarHospedes(){
 
 function consultarHospedeId($id){
     try{
-        $sql = "SELECT * FROM Hospede WHERE id = :id";
+        $sql = "SELECT * FROM Hospede WHERE id_hospede = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
         $stmt->bindValue(":id", $id);
@@ -47,7 +47,7 @@ function consultarHospedeId($id){
 
 function alterarHospede($nome, $fone, $checkin, $id){
     try{
-        $sql = "UPDATE Hospede SET nome_hospede = :nome_hospede, telefone = :telefone, data_checkin = :data_checkin WHERE id = :id";
+        $sql = "UPDATE Hospede SET nome_hospede = :nome_hospede, telefone = :telefone, data_checkin = :data_checkin WHERE id_hospede = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
         $stmt->bindValue(":nome_hospede", $nome);
@@ -57,13 +57,14 @@ function alterarHospede($nome, $fone, $checkin, $id){
         return $stmt->execute();
     }
     catch(Exception $e){
+        echo($e->getMessage());
         return 0; 
     }
 }
 
 function excluirHospede($id){
     try{
-        $sql = "DELETE FROM Hospede WHERE id = :id";
+        $sql = "DELETE FROM Hospede WHERE id_hospede = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
         $stmt->bindValue(":id", $id);
@@ -144,12 +145,12 @@ function excluirQuarto($id){
 
 function inserirReserva($datareserva, $hospede, $quarto){
     try{
-        $sql = "INSERT INTO Reserva (data_reserva, id_hospede, id_quarto) VALUES (:data_reserva, :id_hospede, :id_quarto)";
+        $sql = "INSERT INTO Reserva (data_reserva, hospede, quarto) VALUES (:data_reserva, :hospede, :quarto)";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
         $stmt->bindValue(":data_reserva", $datareserva);
-        $stmt->bindValue(":id_hospede", $hospede);
-        $stmt->bindValue(":id_quarto", $quarto);
+        $stmt->bindValue(":hospede", $hospede);
+        $stmt->bindValue(":quarto", $quarto);
         return $stmt->execute();
     }
     catch(Exception $e){
@@ -159,7 +160,7 @@ function inserirReserva($datareserva, $hospede, $quarto){
 
 function mostrarReservas(){
     try {
-        $sql = "SELECT id_reserva, data_reserva, id_hospede, id_quarto, nome_hospede, numero_quarto FROM Reserva r INNER JOIN Hospede h ON r.id_hospede = h.id_hospede INNER JOIN QUartos q ON q.id_quarto = r.id_quarto";
+        $sql = "SELECT id_reserva, data_reserva, hospede, quarto, nome_hospede, numero_quarto FROM Reserva r INNER JOIN Hospede h ON r.hospede = h.id_hospede INNER JOIN QUartos q ON r.quarto = q.id_quarto";
         $conexao = conectar();
         return $conexao->query($sql);
     } catch (Exception $e) {
@@ -212,7 +213,7 @@ function excluirReserva($id){
 }
 function inserirServico($servico, $custo, $reserva){
     try{
-        $sql = "INSERT INTO Servicos (nome_servico, custo, id_reserva) VALUES (:nome_servico, :custo, :id_reserva)";
+        $sql = "INSERT INTO Servicos (nome_servico, custo, reserva) VALUES (:nome_servico, :custo, :reserva)";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
         $stmt->bindValue(":nome_servico", $servico);
@@ -240,7 +241,7 @@ function consultarServicoId($id){
 }
 function mostrarServicos(){
     try {
-        $sql = "SELECT id_servico, nome_servico, custo, id_reserva FROM Servicos s INNER JOIN Reserva r ON s.id_reserva = s.id_reserva";
+        $sql = "SELECT id_servico, nome_servico, custo, reserva FROM Servicos s INNER JOIN Reserva r ON s.reserva = r.id_reserva";
         $conexao = conectar();
         return $conexao->query($sql);
     } catch (Exception $e) {
