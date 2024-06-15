@@ -2,7 +2,7 @@
 require_once("../cabecalho.php");
 ?>
 <h1>Serviços</h1>
-<a href="inserir_servico.php" class="btn btn-primary mt-3">Adicionar Produto</a>
+<a href="inserir_servico.php" class="btn btn-primary mt-3">Adicionar serviço</a>
 
 <table class="mt-3 table table-hover table-striped">
     <thead>
@@ -19,10 +19,10 @@ require_once("../cabecalho.php");
                 while ($l = $linhas->fetch(PDO::FETCH_ASSOC)){
             ?>
             <tr>
-                <td><?= $l['id'] ?></td>
-                <td><?= $l['servico'] ?></td>
+                <td><?= $l['id_servico'] ?></td>
+                <td><?= $l['nome_servico'] ?></td>
                 <td><?= $l['custo'] ?></td>
-                <td><?= $l['reserva'] ?></td>
+                <td><?= $l['id_reserva'] ?></td>
                 <td>
         
                 <a href="alterar_servico.php" class="btn btn-warning">Alterar</a>

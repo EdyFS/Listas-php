@@ -30,9 +30,9 @@ require_once("../cabecalho.php");
 
 <?php
 if ($_POST){
-    $nome = $_POST['nome_hospede'];
-    $fone = $_POST['telefone'];
-    $checkin = $_POST['data_checkin'];
+    $nome = $_POST['nome'];
+    $fone = $_POST['fone'];
+    $checkin = $_POST['checkin'];
     if ($nome != "" && $fone != "" && $checkin != ""){
         if (inserirHospede($nome,$fone,$checkin))
             echo "Registro inserido com sucesso!";

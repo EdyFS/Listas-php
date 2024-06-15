@@ -19,10 +19,10 @@ require_once("../cabecalho.php");
                 while ($l = $linhas->fetch(PDO::FETCH_ASSOC)){
             ?>
             <tr>
-                <td><?= $l['id'] ?></td>
-                <td><?= $l['nome'] ?></td>
-                <td><?= $l['fone'] ?></td>
-                <td><?= $l['checkin'] ?></td>
+                <td><?= $l['id_hospede'] ?></td>
+                <td><?= $l['nome_hospede'] ?></td>
+                <td><?= $l['telefone'] ?></td>
+                <td><?= $l['data_checkin'] ?></td>
                 <td>
         
                 <a href="alterar_hospede.php" class="btn btn-warning">Alterar</a>

@@ -30,11 +30,11 @@ require_once("../cabecalho.php");
 
 <?php
 if ($_POST){
-    $numero = $_POST['numero_quarto'];
+    $numero = $_POST['numero'];
     $tipo = $_POST['tipo'];
-    $preco = $_POST['preco_por_noite'];
+    $preco = $_POST['preco'];
     if ($numero != "" && $tipo != "" && $preco != ""){
-        if (inserirHospede($numero,$tipo,$preco))
+        if (inserirQuarto($numero,$tipo,$preco))
             echo "Registro inserido com sucesso!";
         else
             echo "Erro ao inserir o registro!";

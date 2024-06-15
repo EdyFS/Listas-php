@@ -31,9 +31,23 @@ function mostrarHospedes(){
     }
 }
 
+function consultarHospedeId($id){
+    try{
+        $sql = "SELECT * FROM Hospede WHERE id = :id";
+        $conexao = conectar();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+    catch (Exception $e){
+
+    }
+}
+
 function alterarHospede($nome, $fone, $checkin, $id){
     try{
-        $sql = "UPDATE Hospede SET nome_hospede = :nome_hospede, telefone = :telefone, data_checkin = :data_checkin = :categoria WHERE id = :id";
+        $sql = "UPDATE Hospede SET nome_hospede = :nome_hospede, telefone = :telefone, data_checkin = :data_checkin WHERE id = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
         $stmt->bindValue(":nome_hospede", $nome);
@@ -82,6 +96,20 @@ function mostrarQuartos(){
         return $conexao->query($sql);
     } catch (Exception $e) {
         return 0;
+    }
+}
+
+function consultarQuartoId($id){
+    try{
+        $sql = "SELECT * FROM Quartos WHERE id = :id";
+        $conexao = conectar();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+    catch (Exception $e){
+
     }
 }
 
@@ -139,6 +167,20 @@ function mostrarReservas(){
     }
 }
 
+function consultarReservId($id){
+    try{
+        $sql = "SELECT * FROM Reserva WHERE id = :id";
+        $conexao = conectar();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+    catch (Exception $e){
+
+    }
+}
+
 function alterarReserva($datareserva, $hospede, $quarto,$id){
     try{
         $sql = "UPDATE Reserva SET data_reserva = :data_reserva, id_hospede = :id_hospede, id_quarto = :id_quarto WHERE id = :id";
@@ -154,6 +196,7 @@ function alterarReserva($datareserva, $hospede, $quarto,$id){
         return 0;
     }
 }
+
 
 function excluirReserva($id){
     try{
@@ -182,6 +225,19 @@ function inserirServico($servico, $custo, $reserva){
     }
 }
 
+function consultarServicoId($id){
+    try{
+        $sql = "SELECT * FROM Servico WHERE id = :id";
+        $conexao = conectar();
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+    catch (Exception $e){
+
+    }
+}
 function mostrarServicos(){
     try {
         $sql = "SELECT id_servico, nome_servico, custo, id_reserva FROM Servicos s INNER JOIN Reserva r ON s.id_reserva = s.id_reserva";
