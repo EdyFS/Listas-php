@@ -22,19 +22,19 @@ $dados = consultarQuartoId($id);
     <div class="row">
         <div class="col">
         <label for="numero" class="form-label">Insira o número do quarto: </label>
-        <input type="number" class="form-control" name="numero" value="<?= $dados['numero'] ?>" disabled>
+        <input type="number" class="form-control" name="numero" value="<?= $numero ?>" disabled>
         </div>
     </div>
     <div class="row">
         <div class="col">
         <label for="tipo" class="form-label">Insira o tipo do quarto: </label>
-        <input type="text" class="form-control" name="tipo" value="<?= $dados['tipo'] ?>" disabled>
+        <input type="text" class="form-control" name="tipo" value="<?= $tipo ?>" disabled>
         </div>
     </div>
     <div class="row">
         <div class="col">
         <label for="preco" class="form-label">Insira o preço do quarto: </label>
-        <input type="number" class="form-control" name="preco" value="<?= $dados['preco'] ?>" disabled>
+        <input type="number" class="form-control" name="preco" value="<?= $preco ?>" disabled>
         </div>
     </div>
     <div class="row">

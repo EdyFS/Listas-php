@@ -8,12 +8,12 @@ function conectar(){
 
 function inserirHospede($nome, $fone, $checkin){
     try{
-        $sql = "INSERT INTO Hospede (nome_hospede, telefone, data_checkin) VALUES (:nome_hospede, :telefone, :data_checkin)";
+        $sql = "INSERT INTO Hospede (nome_hospede, telefone, data_checkin) VALUES (:nome, :fone, :checkin)";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":nome_hospede", $nome);
-        $stmt->bindValue(":telefone", $fone);
-        $stmt->bindValue(":data_checkin", $checkin);
+        $stmt->bindValue(":nome", $nome);
+        $stmt->bindValue(":fone", $fone);
+        $stmt->bindValue(":checkin", $checkin);
         return $stmt->execute();
     }
     catch(Exception $e){
@@ -47,13 +47,13 @@ function consultarHospedeId($id){
 
 function alterarHospede($nome, $fone, $checkin, $id){
     try{
-        $sql = "UPDATE Hospede SET nome_hospede = :nome_hospede, telefone = :telefone, data_checkin = :data_checkin WHERE id_hospede = :id_hospede";
+        $sql = "UPDATE Hospede SET nome_hospede = :nome, telefone = :fone, data_checkin = :checkin WHERE id_hospede = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":nome_hospede", $nome);
-        $stmt->bindValue(":telefone", $fone);
-        $stmt->bindValue(":data_checkin", $checkin);
-        $stmt->bindValue(":id_hospede", $id);
+        $stmt->bindValue(":nome", $nome);
+        $stmt->bindValue(":fone", $fone);
+        $stmt->bindValue(":checkin", $checkin);
+        $stmt->bindValue(":id", $id);
         return $stmt->execute();
     }
     catch(Exception $e){
@@ -64,10 +64,10 @@ function alterarHospede($nome, $fone, $checkin, $id){
 
 function excluirHospede($id){
     try{
-        $sql = "DELETE FROM Hospede WHERE id_hospede = :id_hospede";
+        $sql = "DELETE FROM Hospede WHERE id_hospede = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":id_hospede", $id);
+        $stmt->bindValue(":id", $id);
         return $stmt->execute();
     }
     catch(Exception $e){
@@ -77,12 +77,12 @@ function excluirHospede($id){
 
 function inserirQuarto($numero, $tipo, $preco){
     try{
-        $sql = "INSERT INTO Quartos (numero_quarto, tipo, preco_por_noite) VALUES (:numero_quarto, :tipo, :preco_por_noite)";
+        $sql = "INSERT INTO Quartos (numero_quarto, tipo, preco_por_noite) VALUES (:numero, :tipo, :preco)";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":numero_quarto", $numero);
+        $stmt->bindValue(":numero", $numero);
         $stmt->bindValue(":tipo", $tipo);
-        $stmt->bindValue(":preco_por_noite", $preco);
+        $stmt->bindValue(":preco", $preco);
         return $stmt->execute();
     }
     catch(Exception $e){
@@ -102,10 +102,10 @@ function mostrarQuartos(){
 
 function consultarQuartoId($id){
     try{
-        $sql = "SELECT * FROM Quartos WHERE id_quarto = :id_quarto";
+        $sql = "SELECT * FROM Quartos WHERE id_quarto = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":id_quarto", $id);
+        $stmt->bindValue(":id", $id);
         $stmt->execute();
         return $stmt->fetch();
     }
@@ -116,13 +116,13 @@ function consultarQuartoId($id){
 
 function alterarQuarto($numero, $tipo, $preco, $id){
     try{
-        $sql = "UPDATE Quartos SET numero_quarto = :numero_quarto, tipo = :tipo, preco_por_noite = :preco_por_noite WHERE id_quarto = :id_quarto";
+        $sql = "UPDATE Quartos SET numero_quarto = :numero, tipo = :tipo, preco_por_noite = :preco WHERE id_quarto = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":numero_quarto", $numero);
+        $stmt->bindValue(":numero", $numero);
         $stmt->bindValue(":tipo", $tipo);
-        $stmt->bindValue(":preco_por_noite", $preco);
-        $stmt->bindValue(":id_quarto", $id);
+        $stmt->bindValue(":preco", $preco);
+        $stmt->bindValue(":id", $id);
         return $stmt->execute();
     }
     catch(Exception $e){
@@ -132,10 +132,10 @@ function alterarQuarto($numero, $tipo, $preco, $id){
 
 function excluirQuarto($id){
     try{
-        $sql = "DELETE FROM Quartos WHERE id_quarto = :id_quarto";
+        $sql = "DELETE FROM Quartos WHERE id_quarto = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":id_quarto", $id);
+        $stmt->bindValue(":id", $id);
         return $stmt->execute();
     }
     catch(Exception $e){
@@ -145,10 +145,10 @@ function excluirQuarto($id){
 
 function inserirReserva($datareserva, $hospede, $quarto){
     try{
-        $sql = "INSERT INTO Reserva (data_reserva, hospede, quarto) VALUES (:data_reserva, :hospede, :quarto)";
+        $sql = "INSERT INTO Reserva (data_reserva, hospede, quarto) VALUES (:datareserva, :hospede, :quarto)";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":data_reserva", $datareserva);
+        $stmt->bindValue(":datareserva", $datareserva);
         $stmt->bindValue(":hospede", $hospede);
         $stmt->bindValue(":quarto", $quarto);
         return $stmt->execute();
@@ -170,10 +170,10 @@ function mostrarReservas(){
 
 function consultarReservaId($id){
     try{
-        $sql = "SELECT * FROM Reserva WHERE id_reserva = :id_reserva";
+        $sql = "SELECT * FROM Reserva WHERE id_reserva = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":id_reserva", $id);
+        $stmt->bindValue(":id", $id);
         $stmt->execute();
         return $stmt->fetch();
     }
@@ -184,13 +184,13 @@ function consultarReservaId($id){
 
 function alterarReserva($datareserva, $hospede, $quarto,$id){
     try{
-        $sql = "UPDATE Reserva SET data_reserva = :data_reserva, id_hospede = :id_hospede, id_quarto = :id_quarto WHERE id_reserva = :id_reserva";
+        $sql = "UPDATE Reserva SET data_reserva = :datareserva, id_hospede = :hospede, id_quarto = :quarto WHERE id_reserva = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":data_reserva", $datareserva);
-        $stmt->bindValue(":id_hospede", $hospede);
-        $stmt->bindValue(":id_quarto", $quarto);
-        $stmt->bindValue(":id_reserva", $id);
+        $stmt->bindValue(":datareserva", $datareserva);
+        $stmt->bindValue(":hospede", $hospede);
+        $stmt->bindValue(":quarto", $quarto);
+        $stmt->bindValue(":id", $id);
         return $stmt->execute();
     }
     catch(Exception $e){
@@ -201,10 +201,10 @@ function alterarReserva($datareserva, $hospede, $quarto,$id){
 
 function excluirReserva($id){
     try{
-        $sql = "DELETE FROM Reserva WHERE id_reserva = :id_reserva";
+        $sql = "DELETE FROM Reserva WHERE id_reserva = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":id_reserva", $id);
+        $stmt->bindValue(":id", $id);
         return $stmt->execute();
     }
     catch(Exception $e){
@@ -213,10 +213,10 @@ function excluirReserva($id){
 }
 function inserirServico($servico, $custo, $reserva){
     try{
-        $sql = "INSERT INTO Servicos (nome_servico, custo, reserva) VALUES (:nome_servico, :custo, :reserva)";
+        $sql = "INSERT INTO Servicos (nome_servico, custo, reserva) VALUES (:servico, :custo, :reserva)";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":nome_servico", $servico);
+        $stmt->bindValue(":servico", $servico);
         $stmt->bindValue(":custo", $custo);
         $stmt->bindValue(":reserva", $reserva);
         return $stmt->execute();
@@ -228,10 +228,10 @@ function inserirServico($servico, $custo, $reserva){
 
 function consultarServicoId($id){
     try{
-        $sql = "SELECT * FROM Servico WHERE id_servico = :id_servico";
+        $sql = "SELECT * FROM Servico WHERE id_servico = :servico";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":id_servico", $id);
+        $stmt->bindValue(":servico", $id);
         $stmt->execute();
         return $stmt->fetch();
     }
@@ -251,13 +251,13 @@ function mostrarServicos(){
 
 function alterarServico($servico, $custo, $reserva, $id){
     try{
-        $sql = "UPDATE Servicos SET nome_servico = :nome_servico, custo = :custo, id_reserva = :id_reserva WHERE id_servico = :id_servico";
+        $sql = "UPDATE Servicos SET nome_servico = :servico, custo = :custo, id_reserva = :reserva WHERE id_servico = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":nome_servico", $servico);
+        $stmt->bindValue(":servico", $servico);
         $stmt->bindValue(":custo", $custo);
         $stmt->bindValue(":reserva", $reserva);
-        $stmt->bindValue(":id_servico", $id);
+        $stmt->bindValue(":id", $id);
         return $stmt->execute();
     }
     catch(Exception $e){
@@ -267,10 +267,10 @@ function alterarServico($servico, $custo, $reserva, $id){
 
 function excluirServico($id){
     try{
-        $sql = "DELETE FROM Servicos WHERE id_servico = :id_servico";
+        $sql = "DELETE FROM Servicos WHERE id_servico = :id";
         $conexao = conectar();
         $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(":id_servico", $id);
+        $stmt->bindValue(":id", $id);
         return $stmt->execute();
     }
     catch(Exception $e){
