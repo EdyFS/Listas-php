@@ -1,45 +1,45 @@
 <?php
 require_once("../cabecalho.php");
 session_start();
-if (isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
-
     $_SESSION['id'] = $id;
-    } else
-    
-    if ($_POST){
-        $id = $_SESSION['id'];
-        if (excluirQuarto($_SESSION ['id'] ))
-            header('Location: index.php');
-        else
-            echo "Erro ao excluir o registro!";
-         
-    }
-$dados = consultarQuartoId($id);
+} else {
+    $id = $_SESSION['id'];
+}
+if (isset($_POST['atualizar'])){
+            if (excluirQuarto($_SESSION['id'])){
+                echo "Registro alterado com sucesso!";}
+            else{
+                echo "Erro ao alterar o registro!";}
+        } else {
+            echo "Preencha todos os campos!";
+        }
+    $dados = consultarQuartoId($id);
 ?>
-<h1 class="d-flex justify-content-center">Excluir quarto</h1>
-<form action="excluir_quarto.php" method="POST">
+<h1 class="d-flex justify-content-center">Excluir dados do hóspede</h1>
+<form action="" method="POST">
     <div class="row">
         <div class="col">
         <label for="numero" class="form-label">Insira o número do quarto: </label>
-        <input type="number" class="form-control" name="numero" value="<?= $numero ?>" disabled>
+        <input type="number" class="form-control" name="numero" value="<?= $dados['numero_quarto'] ?>" disabled> 
         </div>
     </div>
     <div class="row">
         <div class="col">
-        <label for="tipo" class="form-label">Insira o tipo do quarto: </label>
-        <input type="text" class="form-control" name="tipo" value="<?= $tipo ?>" disabled>
+        <label for="tipo" class="form-label">Insira o telefone do hóspede: </label>
+        <input type="text" class="form-control" name="tipo" value="<?= $dados['tipo'] ?>" disabled>
         </div>
     </div>
     <div class="row">
         <div class="col">
-        <label for="preco" class="form-label">Insira o preço do quarto: </label>
-        <input type="number" class="form-control" name="preco" value="<?= $preco ?>" disabled>
+        <label for="preco" class="form-label">Insira a data de Check In do hóspede: </label>
+        <input type="number" class="form-control" name="preco" value="<?= $dados['preco'] ?>" disabled>
         </div>
     </div>
     <div class="row">
         <div class="col">
-        <button type="submit" class="btn btn-success mt-3">Excluir</button>
+        <input type="submit" class="btn btn-danger mt-3" name="atualizar" value="Excluir">
         </div>
     </div>
 </form>
