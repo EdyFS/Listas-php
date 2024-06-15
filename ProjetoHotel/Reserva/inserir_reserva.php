@@ -1,7 +1,7 @@
 <?php
 require_once("../cabecalho.php");
 ?>
-<h1 class="d-flex justify-content-center">Inserir novo hóspede</h1>
+<h1 class="d-flex justify-content-center">Inserir nova reserva</h1>
 <form action="" method="POST">
     <div class="row">
         <div class="col">
