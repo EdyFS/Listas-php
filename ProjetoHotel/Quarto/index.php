@@ -15,14 +15,14 @@ require_once("../cabecalho.php");
     </thead>
     <tbody>
     <?php
-                $linhas = retornarProdutos();
+                $linhas = mostrarQuartos();
                 while ($l = $linhas->fetch(PDO::FETCH_ASSOC)){
             ?>
             <tr>
-                <td><?= $l['nome'] ?></td>
-                <td><?= $l['descricao'] ?></td>
-                <td><?= $l['valor'] ?></td>
-                <td><?= $l['categoria'] ?></td>
+                <td><?= $l['id'] ?></td>
+                <td><?= $l['numero'] ?></td>
+                <td><?= $l['tipo'] ?></td>
+                <td><?= $l['preco'] ?></td>
                 <td>
         
                 <a href="alterar_quarto.php" class="btn btn-warning">Alterar</a>

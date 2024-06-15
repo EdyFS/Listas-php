@@ -15,14 +15,14 @@ require_once("../cabecalho.php");
     </thead>
     <tbody>
     <?php
-                $linhas = retornarProdutos();
+                $linhas = mostrarReservas();
                 while ($l = $linhas->fetch(PDO::FETCH_ASSOC)){
             ?>
             <tr>
-                <td><?= $l['nome'] ?></td>
-                <td><?= $l['descricao'] ?></td>
-                <td><?= $l['valor'] ?></td>
-                <td><?= $l['categoria'] ?></td>
+                <td><?= $l['id'] ?></td>
+                <td><?= $l['datareserva'] ?></td>
+                <td><?= $l['hospede'] ?></td>
+                <td><?= $l['quarto'] ?></td>
                 <td>
         
                 <a href="alterar_reserva.php" class="btn btn-warning">Alterar</a>

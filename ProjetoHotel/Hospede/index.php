@@ -15,14 +15,14 @@ require_once("../cabecalho.php");
     </thead>
     <tbody>
     <?php
-                $linhas = retornarProdutos();
+                $linhas = mostrarHospedes();
                 while ($l = $linhas->fetch(PDO::FETCH_ASSOC)){
             ?>
             <tr>
+                <td><?= $l['id'] ?></td>
                 <td><?= $l['nome'] ?></td>
-                <td><?= $l['descricao'] ?></td>
-                <td><?= $l['valor'] ?></td>
-                <td><?= $l['categoria'] ?></td>
+                <td><?= $l['fone'] ?></td>
+                <td><?= $l['checkin'] ?></td>
                 <td>
         
                 <a href="alterar_hospede.php" class="btn btn-warning">Alterar</a>
