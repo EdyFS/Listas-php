@@ -1,7 +1,7 @@
 <?php
 require_once("../cabecalho.php");
 if (isset($_GET['id'])){
-    $id = $GET['id'];
+    $id = $GET['id_quarto'];
     session_start();
     $_SESSION['id'] = $id;
     } else
@@ -27,19 +27,19 @@ if (isset($_GET['id'])){
     <div class="row">
         <div class="col">
         <label for="numero" class="form-label">Insira o número do quarto: </label>
-        <input type="number" class="form-control" name="numero" value="<?= $dados['numero'] ?>">
+        <input type="number" class="form-control" name="numero" value="<?= $numero ?>">
         </div>
     </div>
     <div class="row">
         <div class="col">
         <label for="tipo" class="form-label">Insira o tipo do quarto: </label>
-        <input type="text" class="form-control" name="tipo" value="<?= $dados['tipo'] ?>">
+        <input type="text" class="form-control" name="tipo" value="<?= $tipo ?>">
         </div>
     </div>
     <div class="row">
         <div class="col">
         <label for="preco" class="form-label">Insira o preço do quarto: </label>
-        <input type="number" class="form-control" name="preco" value="<?= $dados['preco'] ?>">
+        <input type="number" class="form-control" name="preco" value="<?= $preco ?>">
         </div>
     </div>
     <div class="row">
