@@ -29,4 +29,17 @@ require_once("../cabecalho.php");
 </form>
 
 <?php
+if ($_POST){
+    $nome = $_POST['nome_hospede'];
+    $fone = $_POST['telefone'];
+    $checkin = $_POST['data_checkin'];
+    if ($nome != "" && $fone != "" && $checkin != ""){
+        if (inserirHospede($nome,$fone,$checkin))
+            echo "Registro inserido com sucesso!";
+        else
+            echo "Erro ao inserir o registro!";
+    } else {
+        echo "Preencha todos os campos!";
+    }
+}
 require_once("../rodape.html");

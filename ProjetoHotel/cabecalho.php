@@ -32,3 +32,8 @@
       </div>
     </nav>
     <main class="container">
+    <?php
+require_once("funcoes.php");
+if(conectar()){
+  echo "Conexão realizada com sucesso!";
+}
